@@ -24,7 +24,7 @@ def main():
         now = datetime.datetime.now()
         str = f"{now.strftime('%Y-%m-%d %H.%M.%S.%f')} {test_connection(url)}"
         print(str)
-        file.write(f"{str}\r\n".replace(' ',','))
+        file.write(f"{str}".replace(' ',','))
         if keyboard.is_pressed('esc'):
             quit = True
     file.close()
