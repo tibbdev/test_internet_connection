@@ -18,13 +18,13 @@ def main():
     start = datetime.datetime.now()
     url="http://www.google.co.uk"
     file = open(f"./connection_test_{url.replace('http://','')}_{start.strftime('%Y.%m.%d_%H.%M.%S_%Z')}.csv", "w")
-    file.write(f"date,time,connected")
+    file.write(f"date,time,connected\n")
 
     while not quit:
         now = datetime.datetime.now()
         str = f"{now.strftime('%Y-%m-%d %H.%M.%S.%f')} {test_connection(url)}"
         print(str)
-        file.write(f"{str}".replace(' ',','))
+        file.write(f"{str}\n".replace(' ',','))
         if keyboard.is_pressed('esc'):
             quit = True
     file.close()
